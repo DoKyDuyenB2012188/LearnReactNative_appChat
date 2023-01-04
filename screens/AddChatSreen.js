@@ -1,8 +1,8 @@
-import { Alert, StyleSheet, Text, View } from "react-native";
+import { Alert, StyleSheet, View } from "react-native";
 import React from "react";
 import { useState } from "react";
 import { useLayoutEffect } from "react";
-import { Button, Input, Image } from "@rneui/themed";
+import { Button, Input} from "@rneui/themed";
 import { Icon } from "@rneui/base";
 import { db } from "../config/config";
 import { collection, addDoc } from "firebase/firestore";

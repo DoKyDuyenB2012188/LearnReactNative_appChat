@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, KeyboardAvoidingView, Alert } from "react-native";
 import React, { useLayoutEffect, useState } from "react";
 import { Button, Input } from "@rneui/themed";
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, updateProfile, getAuth } from "firebase/auth";
 import { auth } from "../config/config";
 const RegisterScreen = ({ navigation }) => {
   const [name, setName] = useState("");

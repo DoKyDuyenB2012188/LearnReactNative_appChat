@@ -4,7 +4,6 @@ import {
   SafeAreaView,
   View,
   TouchableOpacity,
-  Text,
 } from "react-native";
 import { collection, getDocs } from "firebase/firestore";
 import React, { useEffect, useLayoutEffect, useState } from "react";
@@ -13,9 +12,10 @@ import CustomListItem from "../components/CustomListItem";
 import { Avatar } from "@rneui/themed";
 import { auth, db } from "../config/config";
 import { AntDesign, SimpleLineIcons } from "@expo/vector-icons";
-
+import { useIsFocused } from "@react-navigation/native";
 const HomeScreen = ({ navigation }) => {
   const [chats, setChats] = useState([]);
+  const isFocused = useIsFocused();
   const signOutUser = () => {
     signOut(auth)
       .then(() => {
@@ -41,7 +41,7 @@ const HomeScreen = ({ navigation }) => {
       setChats(data);
     };
     fetchCat();
-  }, []);
+  }, [isFocused]);
   useLayoutEffect(() => {
     navigation.setOptions({
       title: "Signal",
